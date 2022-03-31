@@ -3,7 +3,6 @@ const n=document.querySelector("#name"),
       b=document.querySelector("#addbtn"),
       tl=document.querySelector(".todo-list");
       b.addEventListener("click",addTodo);
-      tl.addEventListener("click",deleteTodo);
 function addTodo(e){
     e.preventDefault();
     if (c.value!="" && n.value!=""){
@@ -17,6 +16,7 @@ function addTodo(e){
     delbtn.innerHTML = '<i class="fas fa-trash"></i>';
     delbtn.classList.add("trash-btn");
     todoDiv.appendChild(delbtn);
+    delbtn.addEventListener("click",deleteTodo);
     tl.appendChild(todoDiv);
     n.value="";
     c.value="";
